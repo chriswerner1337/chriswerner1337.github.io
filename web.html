@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VULPESOFT | Modern IT Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --bg-dark: #0a192f;
+            --bg-light: #112240;
+            --accent: #64ffda;
+            --text-main: #ccd6f6;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Nav */
+        header {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            background: radial-gradient(circle at 80% 20%, #172a45 0%, #0a192f 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 10%;
+            background-color: var(--bg-dark);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 1px;
+            background: var(--text-dim);
+            margin-left: 20px;
+            opacity: 0.3;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 10%;
+            text-align: center;
+            background-color: var(--bg-dark);
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .email-link {
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-bottom: 1px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .email-link:hover {
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 10%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 0 5%; }
+            .services { padding: 80px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">VULPE<span>SOFT</span></div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Intelligent IT.<br>Refined.</h1>
+            <p>At VULPESOFT, we engineer high-performance digital ecosystems. From cloud architecture to custom software, we bring a sharp, tactical approach to modern technology.</p>
+            <a href="#services" class="btn">Explore Our Expertise</a>
+        </section>
+
+        <section id="services" class="services">
+            <h2 class="section-title">Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Software Engineering</h3>
+                    <p>Scalable, robust backend systems and intuitive frontend experiences tailored to your business logic.</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud Architecture</h3>
+                    <p>Seamless migration and management of cloud infrastructures using AWS, Azure, and Google Cloud.</p>
+                </div>
+                <div class="card">
+                    <h3>Cybersecurity</h3>
+                    <p>End-to-end security audits and implementation of zero-trust protocols to protect your proprietary data.</p>
+                </div>
+                <div class="card">
+                    <h3>IT Consulting</h3>
+                    <p>Strategic technology roadmaps designed to scale with your company's growth and vision.</p>
+                </div>
+                <div class="card">
+                    <h3>Data Analytics</h3>
+                    <p>Transforming raw data into actionable business intelligence through custom modeling and visualization.</p>
+                </div>
+                <div class="card">
+                    <h3>DevOps Automation</h3>
+                    <p>Streamlining development pipelines with CI/CD integration to ensure rapid, reliable software delivery.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-box">
+                <h2>Get In Touch</h2>
+                <p>Ready to upgrade your infrastructure? Our team is available for consultations and project inquiries.</p>
+                <a href="mailto:contact@vulpesoft.com" class="email-link">contact@vulpesoft.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VULPESOFT. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
