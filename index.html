@@ -83,19 +83,19 @@
 
         nav a:hover { color: var(--accent); }
 
-        /* Hero Section with Video */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 10%;
             position: relative;
-            overflow: hidden; /* Clips the video if it goes off-screen */
+            overflow: hidden;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2; /* Sits above the video */
+            z-index: 2;
             max-width: 650px;
         }
 
@@ -112,26 +112,24 @@
             margin-bottom: 40px;
         }
 
-        /* Video Styling */
+        /* Video Styling - Mask Removed */
         .video-container {
             position: absolute;
-            right: -5%; /* Off-center to the right */
+            right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 60%;
-            height: 80%;
+            width: 55%;
+            height: 90%;
             z-index: 1;
-            opacity: 0.25; /* Subtle background presence */
+            opacity: 0.4; /* Slightly increased visibility */
             pointer-events: none;
-            /* Creates a soft fade into the background */
-            mask-image: radial-gradient(circle, black 30%, transparent 80%);
-            -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);
         }
 
         .video-container video {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* Keeps foxy from being stretched */
+            object-position: right center;
         }
 
         .btn {
@@ -188,13 +186,13 @@
         footer { padding: 60px 10% 40px; text-align: center; font-size: 0.8rem; color: var(--text-dim); }
 
         @media (max-width: 992px) {
-            .video-container { width: 100%; right: -20%; }
+            .video-container { width: 70%; opacity: 0.2; }
         }
 
         @media (max-width: 768px) {
             nav { display: none; }
             .hero { padding: 0 5%; justify-content: center; text-align: center; }
-            .video-container { display: none; } /* Hide video on small mobiles for performance */
+            .video-container { display: none; }
         }
     </style>
 </head>
